@@ -60,8 +60,8 @@ namespace SciCalk.ViewModels
         {
             Dictionary<string, string> _opMapper = new()
             {
-                {"X", "*"},
-                {"", "/"},
+                {"×", "*"},
+                {"÷", "/"},
                 {"SIN", "Sin"},
                 {"COS", "Cos"},
                 {"TAN", "Tan"},
