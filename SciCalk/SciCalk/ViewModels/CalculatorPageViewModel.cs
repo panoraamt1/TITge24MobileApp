@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Android.App;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 
 namespace SciCalk.ViewModels
@@ -18,5 +20,117 @@ namespace SciCalk.ViewModels
         private string calculatedResult = "0";
 
         private bool isSciOpWaiting = false;
+
+        [RelayCommand]
+        private void Reset()
+        {
+            CalculatedResult = "0";
+            InputText = string.Empty;
+            isSciOpWaiting = false;
+        }
+
+        [RelayCommand]
+        private void Calculate()
+        {
+            if (InputText.Length == 0)
+            {
+                Reset;
+            }
+
+            if(isSciOpWaiting)
+            {
+                InputText += ")";
+                isSciOpWaiting = false ;
+            }
+
+            try
+            {
+                var inputString = NormalizedInputString();
+                var expression = new NCalc.Expression(inputString);
+                var result = expression.Evaluate();
+                CalculatedResult = result.ToString();
+            }
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        private string NormalizedInputString()
+        {
+            Dictionary<string, string> _opMapper = new()
+            {
+                {"X", "*"},
+                {"", "/"},
+                {"SIN", "Sin"},
+                {"COS", "Cos"},
+                {"TAN", "Tan"},
+                {"ASIN", "Asin"},
+                {"ACOS", "Acos"},
+                {"ATAN", "Atan"},
+                {"LOG", "Log"},
+                {"EXP", "Exp"},
+                {"LOG10", "Log10"},
+                {"POW", "Pow"},
+                {"SQRT", "Sqrt"},
+                {"ABS", "Abs"},
+            };
+
+            var retString = InputText;
+            foreach (var key in _opMapper.Keys)
+            { 
+                retString = retString.Replace(key, _opMapper[key]);
+            }
+            return null;
+        }
+
+        [RelayCommand]
+        private void Backspace()
+        {
+            if (InputText.Length > 0)
+            {
+                InputText = InputText.Substring(0, InputText.Length - 1);
+            }
+        }
+
+        [RelayCommand]
+        private void NumberInput(string key)
+        {
+            InputText += key;
+        }
+
+        [RelayCommand]
+        private void MathOperator(string op)
+        {
+            if (isSciOpWaiting)
+            {
+                InputText += ")";
+                isSciOpWaiting = false;
+            }
+            InputText += $" {op}";
+        }
+
+        [RelayCommand]
+        private void RegionOperator(string op)
+        {
+            if (isSciOpWaiting)
+            {
+                InputText += ")";
+                isSciOpWaiting = false;
+            }
+            InputText += $" {op}";
+        }
+
+        [RelayCommand]
+        private void ScientificOperator(string op)
+        {
+            if (isSciOpWaiting)
+            {
+                InputText += $"{op}(";
+                isSciOpWaiting = false;
+            }
+            
+        }
     }
 }
