@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Android.App;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -34,7 +33,7 @@ namespace SciCalk.ViewModels
         {
             if (InputText.Length == 0)
             {
-                Reset;
+                return;
             }
 
             if(isSciOpWaiting)
