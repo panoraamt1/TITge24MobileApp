@@ -105,5 +105,133 @@
             Text="SIN"
             Command="{Binding SientificOperatorCommand}"
             CommandParameter="SIN"/>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="COS"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="COS"/>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="TAN"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="TAN"/>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="LOG"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="LOG"/>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="EXP"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="EXP"/>
+
+        <!--Row 3-->
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="ASIN"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="ASIN"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="ACOS"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="ACOS"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="ATAN"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="ATAN"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="LOG10"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="LOG10"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="4"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="POW"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="POW"/>
+
+        <!--Row 4-->
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="SQRT"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="SQRT"/>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="ABS"
+            Command="{Binding SientificOperatorCommand}"
+            CommandParameter="ABS"/>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text=","
+            Command="{Binding RegionOparatorCommand}"
+            CommandParameter=","/>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text="("
+            Command="{Binding RegionOparatorCommand}"
+            CommandParameter="("/>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="4"
+            ZIndex="1"
+            Style="{StaticResource SientifficOperatorButtonStyle}"
+            Text=")"
+            Command="{Binding RegionOparatorCommand}"
+            CommandParameter=")"/>
     </Grid>
 </ContentPage>
