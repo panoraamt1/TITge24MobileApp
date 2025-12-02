@@ -3,13 +3,13 @@
     x:Class="MauiPlanets.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiPlanets"
+    xmlns:local="clr-namespace:MauiPlanets.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiPlanets">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="StartPage"
+        ContentTemplate="{DataTemplate local:StartPage}"
+        Route="StartPage" />
 
 </Shell>
