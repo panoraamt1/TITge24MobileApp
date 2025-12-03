@@ -1,6 +1,4 @@
-﻿
-
-namespace MauiPlanets.Models
+﻿namespace MauiPlanets.Models
 {
     public class Planet
     {

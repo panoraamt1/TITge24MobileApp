@@ -1,3 +1,4 @@
+using MauiPlanets.Models;
 using MauiPlanets.Services;
 
 namespace MauiPlanets.Views;
@@ -19,8 +20,8 @@ public partial class PlanetsPage : ContentPage
 
 	async void Planets_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
 	{
-		await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection.First() as PlanetsPage));
-	}
+        await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection.First() as Planet));
+    }
 
 	async void ProfilePic_Clicked(System.Object sender, System.EventArgs e)
 	{

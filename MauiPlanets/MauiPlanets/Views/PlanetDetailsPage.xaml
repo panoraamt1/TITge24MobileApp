@@ -67,9 +67,40 @@
                     HeightRequest="2"
                     Stroke="Transparent"
                     Fill="{StaticResource LightBorderColor}"/>
-            </VerticalStackLayout>
-            
-        </ScrollView>
 
+                <!--Planet info-->
+                <Label
+                    LineBreakMode="WordWrap"
+                    Style="{StaticResource PlanetHeaderSubtitleStyle}"
+                    Text="{Binding Description}"/>
+
+                <!--Planet images-->
+                <Label
+                    Style="{StaticResource FeaturedPlanetSubtitleStyle}"
+                    Text="Gallery"/>
+                <CollectionView
+                    Margin="0,-6,0,0"
+                    HeightRequest="400"
+                    WidthRequest="400"
+                    ItemsSource="{Binding Images}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Vertical"
+                            ItemSpacing="16">
+                        </LinearItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Image
+                                Source="Binding ."
+                                Aspect="AspectFill"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                            </Image>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>
