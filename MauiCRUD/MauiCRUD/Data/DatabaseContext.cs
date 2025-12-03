@@ -51,7 +51,7 @@ namespace MauiCRUD.Data
             return await Database.UpdateAsync(item) > 0;
         }
 
-        public async Task<bool> DeleateItemAsync<TTable>(object primaryKey) where TTable : class, new()
+        public async Task<bool> DeleteItemByKeyAsync<TTable>(object primaryKey) where TTable : class, new()
         {
             await CreateTableIfNotExists<TTable>();
             return await Database.UpdateAsync(primaryKey) > 0;
