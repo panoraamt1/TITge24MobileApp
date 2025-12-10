@@ -54,6 +54,15 @@
                                    Text="{Binding Price, StringFormat='Price: {0}'}"
                                    FontSize="12"
                                    FontAttributes="Bold"/>
+                            <Button Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="Edit"
+                                    Padding="0"
+                                    HeightRequest="25"
+                                    FontSize="12"
+                                    CornerRadius="2"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=SetOperatingProductCommand}"
+                                    CommandParameter="{Binding .}"/>
                             <Button Grid.Row="1"
                                     Grid.Column="1"
                                     Text="Del"
@@ -94,17 +103,18 @@
                         <Label Text="Name"/>
                         <Entry Text="{Binding OperatingProduct.Name}"
                                Placeholder="Product Name"
+                               PlaceholderColor="Black"
                                Margin="0"
-                               BackgroundColor="#DAD19F"/>
+                               BackgroundColor="#DAD1F9"/>
                     </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="0">
+                                         Grid.Column="1">
                         <Label Text="Price"/>
                         <Entry Text="{Binding OperatingProduct.Price}"
                                Placeholder="Product Price"
                                Margin="0"
-                               BackgroundColor="#DAD19F"/>
+                               BackgroundColor="#DAD1F9"/>
                     </VerticalStackLayout>
 
                     <Button Grid.Row="1"
