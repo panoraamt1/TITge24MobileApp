@@ -92,7 +92,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Image
-                                Source="Binding ."
+                                Source="{Binding .}"
                                 Aspect="AspectFill"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center">
